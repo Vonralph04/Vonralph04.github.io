@@ -214,6 +214,22 @@
       font-size: 12px;
       text-align: center;
     }
+    
+    /* ===== FIX: Dimensions tooltip covered by Altmetric ===== */
+    .__dimensions_badge_embed__ {
+      position: relative;
+      z-index: 20;
+    }
+    
+    .altmetric-embed {
+      position: relative;
+      z-index: 1;
+    }
+    
+    .dimensions-badge__tooltip {
+      z-index: 9999 !important;
+
+    }
   </style>
 </head>
 
