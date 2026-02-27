@@ -128,15 +128,6 @@
       background: linear-gradient(135deg, rgba(56,189,248,0.18), rgba(167,139,250,0.16));
       border-color: rgba(167,139,250,0.26);
     }
-
-    .right {
-      display: flex;
-      align-items: center;
-      gap: 10px;
-      justify-content: flex-end;
-      min-width: 180px;
-    }
-
     /* Hero */
     .hero {
       padding: 44px 0 18px;
@@ -550,7 +541,7 @@
       new Date(b.date + "T00:00:00") - new Date(a.date + "T00:00:00")
     );
   
-    const top = sorted.slice(0, 5);
+    const top = sorted.slice(0, 5+);
   
     root.innerHTML = top.map(item => {
     
