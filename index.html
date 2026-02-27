@@ -36,6 +36,15 @@
 
     a { color: inherit; text-decoration: none; }
     a.link { text-decoration: underline; text-underline-offset: 3px; }
+        /* Clickable affiliation lines in hero */
+    .hero-info a{
+      color: rgba(255,255,255,0.92);
+      text-decoration: underline;
+      text-underline-offset: 3px;
+    }
+    .hero-info a:hover{
+      color: rgba(255,255,255,1);
+    }
     .wrap { max-width: var(--maxw); margin: 0 auto; padding: 24px; }
 
     /* Top bar */
@@ -366,11 +375,23 @@
           <div class="card-inner">
             <h1 class="headline">Von Ralph Dane Marquez Herbuela</h1>
 
-            <p class="subhead" style="margin-bottom: 10px;">
+            <p class="subhead hero-info" style="margin-bottom: 10px;">
               <b>Project Research Associate</b><br>
-              Cognitive Developmental Robotics Lab<br>
-              International Research Center for Neurointelligence (IRCN), The University of Tokyo<br>
-              herbuela.vonralphdane [AT] mail.u-tokyo.ac.jp
+            
+              <a class="link" href="https://developmental-robotics.jp/en/" target="_blank" rel="noopener">
+                Cognitive Developmental Robotics Lab
+              </a><br>
+            
+              <a class="link" href="https://ircn.jp/en/" target="_blank" rel="noopener">
+                International Research Center for Neurointelligence (IRCN)
+              </a>,
+              <a class="link" href="https://www.u-tokyo.ac.jp/en/" target="_blank" rel="noopener">
+                The University of Tokyo
+              </a><br>
+            
+              <a class="link" href="mailto:herbuela.vonralphdane@mail.u-tokyo.ac.jp">
+                herbuela.vonralphdane@mail.u-tokyo.ac.jp
+              </a>
             </p>
             
             <p class="subhead">
