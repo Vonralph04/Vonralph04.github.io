@@ -3,9 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Von Ralph Herbuela</title>
-  <meta name="description" content="Von Ralph Herbuela — Computer Science Engineering & Psychology. Research, projects, publications, and conferences." />
-
+  <title>Von Ralph Dane Marquez Herbuela, PhD</title>
+  <meta name="description" content="Von Ralph Dane Marquez Herbuela — Project Research Associate at IRCN, The University of Tokyo. Physiological sensing, behavioral data, and AI-driven systems." />
   <style>
     :root{
       --bg: #0b1020;
@@ -414,37 +413,6 @@
   <script>
     // Set current year
     document.getElementById("year").textContent = new Date().getFullYear();
-
-
-            // --- Clean homepage: open section only when clicked ---
-        function openSection(id){
-          const section = document.getElementById(id);
-          if (!section) return;
-        
-          // close all collapsible sections
-          document.querySelectorAll(".section.collapsible").forEach(s => {
-            s.classList.remove("is-open");
-          });
-        
-          // open selected section
-          section.classList.add("is-open");
-        
-          // scroll smoothly
-          section.scrollIntoView({ behavior: "smooth", block: "start" });
-        }
-        
-        // intercept top nav clicks
-        document.querySelectorAll('.nav a.btn').forEach(a => {
-          a.addEventListener("click", function(e){
-            const targetId = this.getAttribute("href").replace("#", "");
-            const target = document.getElementById(targetId);
-        
-            if (target && target.classList.contains("collapsible")) {
-              e.preventDefault();
-              openSection(targetId);
-            }
-          });
-        });
   </script>
 </body>
 </html>
