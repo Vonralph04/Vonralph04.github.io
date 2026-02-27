@@ -346,6 +346,72 @@
       .col-6 { grid-column: span 12; }
       .topbar-inner { gap: 10px; }
     }
+
+    /* ========== NEWS SECTION ========== */
+    .section-head{
+      display:flex;
+      align-items:flex-end;
+      justify-content:space-between;
+      gap:12px;
+      margin-bottom: 12px;
+    }
+    .news-list{
+      display:grid;
+      gap: 10px;
+      margin-top: 12px;
+    }
+    .news-item{
+      border: 1px solid var(--border);
+      background: rgba(255,255,255,0.05);
+      border-radius: var(--radius2);
+      padding: 14px 14px;
+      transition: transform 0.18s ease, border-color 0.18s ease, background 0.18s ease;
+    }
+    .news-item:hover{
+      transform: translateY(-2px);
+      border-color: rgba(255,255,255,0.22);
+      background: rgba(255,255,255,0.06);
+    }
+    .news-top{
+      display:flex;
+      flex-wrap:wrap;
+      gap: 8px;
+      align-items:center;
+      justify-content:space-between;
+      margin-bottom: 6px;
+    }
+    .news-date{
+      font-size: 12px;
+      color: var(--muted2);
+    }
+    .news-title{
+      margin: 0;
+      font-size: 14px;
+      font-weight: 800;
+    }
+    .news-desc{
+      margin: 6px 0 0;
+      font-size: 13px;
+      color: var(--muted);
+    }
+    .news-links{
+      margin-top: 10px;
+      display:flex;
+      gap: 10px;
+      flex-wrap:wrap;
+    }
+    .news-links a{
+      font-size: 12px;
+      text-decoration: underline;
+      text-underline-offset: 3px;
+      color: rgba(255,255,255,0.85);
+    }
+    .news-footer{
+      margin-top: 12px;
+      color: var(--muted2);
+      font-size: 12px;
+    }
+    .muted{ color: var(--muted2); }
   </style>
 </head>
 
@@ -366,6 +432,7 @@
         <a class="btn" href="projects.html">Projects</a>
         <a class="btn" href="publications.html">Publications</a>
         <a class="btn" href="conferences.html">Conferences</a>
+        <a class="btn" href="#news">News</a>
       </nav>
 
       <div class="right">
@@ -424,6 +491,28 @@
       </div>
     </section>
 
+        <!-- News -->
+    <section class="section" id="news">
+      <div class="card">
+        <div class="card-inner">
+          <div class="section-head">
+            <h2 style="margin:0;">News</h2>
+            <p class="lead" style="margin:6px 0 0;">
+              Updates on papers, talks, projects, and lab activities.
+            </p>
+          </div>
+
+          <div id="newsList" class="news-list" aria-live="polite"></div>
+
+          <div class="news-footer">
+            <span class="muted">
+              Edit items inside the <code>NEWS_ITEMS</code> array in the script below.
+            </span>
+          </div>
+        </div>
+      </div>
+    </section>
+
     <footer>
       <div>
         © <span id="year"></span> Von Ralph Herbuela •
@@ -434,8 +523,60 @@
   </main>
 
   <script>
-    // Set current year
-    document.getElementById("year").textContent = new Date().getFullYear();
-  </script>
+  // Set current year
+  document.getElementById("year").textContent = new Date().getFullYear();
+
+  // ========= NEWS DATA (EDIT THIS ONLY) =========
+  const NEWS_ITEMS = [
+    {
+      date: "2026-02-25",
+      title: "Presented our latest work at [Conference Name]",
+      desc: "Shared results on physiological sensing and AI-driven cognitive state modeling.",
+      links: [
+        { label: "Slides", url: "https://example.com/slides" }
+      ]
+    },
+    {
+      date: "2026-01-18",
+      title: "Vision Pro + biosignals integration milestone",
+      desc: "Completed synchronized multimodal recording and playback pipeline.",
+      links: [
+        { label: "GitHub", url: "https://github.com/Vonralph04" }
+      ]
+    }
+  ];
+
+  function formatDate(iso) {
+    const d = new Date(iso + "T00:00:00");
+    if (Number.isNaN(d.getTime())) return iso;
+    return d.toLocaleDateString(undefined, { year: "numeric", month: "short", day: "2-digit" });
+  }
+
+  function renderNews(items) {
+    const root = document.getElementById("newsList");
+    if (!root) return;
+
+    const sorted = [...items].sort((a, b) => new Date(b.date) - new Date(a.date));
+
+    root.innerHTML = sorted.map(item => {
+      const linksHtml = (item.links || []).map(l =>
+        `<a href="${l.url}" target="_blank" rel="noopener">${l.label}</a>`
+      ).join("");
+
+      return `
+        <div class="news-item">
+          <div class="news-top">
+            <p class="news-title">${item.title}</p>
+            <span class="news-date">${formatDate(item.date)}</span>
+          </div>
+          ${item.desc ? `<p class="news-desc">${item.desc}</p>` : ""}
+          ${(item.links && item.links.length) ? `<div class="news-links">${linksHtml}</div>` : ""}
+        </div>
+      `;
+    }).join("");
+  }
+
+  renderNews(NEWS_ITEMS);
+</script>
 </body>
 </html>
