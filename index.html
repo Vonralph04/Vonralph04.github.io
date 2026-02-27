@@ -1,54 +1,25 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Von Ralph Herbuela</title>
-<style>
-body {
-    margin: 0;
-    font-family: Arial, sans-serif;
-    background: #0f172a;
-    color: white;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    text-align: center;
-}
-.container {
-    max-width: 700px;
-}
-h1 {
-    font-size: 3rem;
-    margin-bottom: 10px;
-}
-p {
-    font-size: 1.2rem;
-    color: #94a3b8;
-}
-button {
-    margin-top: 20px;
-    padding: 10px 20px;
-    background: #3b82f6;
-    border: none;
-    border-radius: 5px;
-    color: white;
-    cursor: pointer;
-    font-size: 1rem;
-}
-button:hover {
-    background: #2563eb;
-}
-</style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Von Ralph Herbuela</title>
+  <style>
+    body { margin:0; font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial;
+      background:#0f172a; color:#fff; display:flex; min-height:100vh; align-items:center; justify-content:center; }
+    .card { max-width: 820px; padding: 48px 28px; text-align:center; }
+    h1 { font-size: clamp(2rem, 4vw, 3rem); margin: 0 0 10px; }
+    p { margin: 0 0 22px; color:#94a3b8; font-size: 1.1rem; }
+    a.btn { display:inline-block; padding:12px 18px; border-radius:10px; background:#3b82f6; color:#fff;
+      text-decoration:none; font-weight:600; }
+    a.btn:hover { filter: brightness(0.95); }
+  </style>
 </head>
 <body>
-<div class="container">
+  <main class="card">
     <h1>Hi, I'm Von Ralph 👋</h1>
     <p>Computer Science Engineering & Psychology</p>
-    <button onclick="window.location.href='https://github.com/Vonralph04'">
-        View My GitHub
-    </button>
-</div>
+    <a class="btn" href="https://github.com/Vonralph04">View my GitHub</a>
+  </main>
 </body>
 </html>
