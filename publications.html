@@ -1,1 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Publications • Von Ralph Herbuela</title>
+  <meta name="description" content="Publications of Von Ralph Herbuela." />
 
+  <!-- Metrics badges (Dimensions citations + Altmetric attention) -->
+  <script async src="https://badge.dimensions.ai/badge.js"></script>
+  <script async src="https://embed.altmetric.com/assets/embed.js"></script>
+
+  <style>
+    /* --- minimal shared styles (copied from your index) --- */
+    :root{
+      --bg: #0b1020;
+      --panel: rgba(255,255,255,0.06);
+      --text: rgba(255,255,255,0.92);
+      --muted: rgba(255,255,255,0.68);
+      --muted2: rgba(255,255,255,0.55);
+      --border: rgba(255,255,255,0.12);
+      --shadow: 0 20px 60px rgba(0,0,0,0.35);
+      --radius: 18px;
+      --radius2: 14px;
+      --maxw: 1040px;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial;
+      background:
+        radial-gradient(900px 600px at 20% 15%, rgba(56,189,248,0.18), transparent 60%),
+        radial-gradient(800px 500px at 85% 25%, rgba(167,139,250,0.16), transparent 60%),
+        radial-gradient(900px 600px at 45% 95%, rgba(34,197,94,0.10), transparent 55%),
+        var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+    }
+    a { color: inherit; text-decoration: none; }
+    a.link { text-decoration: underline; text-underline-offset: 3px; }
+    .wrap { max-width: var(--maxw); margin: 0 auto; padding: 24px; }
+
+    .topbar {
+      position: sticky; top: 0; z-index: 50;
+      backdrop-filter: blur(10px);
+      background: rgba(11,16,32,0.55);
+      border-bottom: 1px solid var(--border);
+    }
+    .topbar-inner{
+      max-width: var(--maxw); margin: 0 auto; padding: 14px 24px;
+      display:flex; align-items:center; justify-content:space-between; gap: 12px;
+    }
+    .brand{ display:flex; align-items:center; gap: 12px; min-width: 180px; }
+    .avatar{
+      width: 36px; height: 36px; border-radius: 12px;
+      background: linear-gradient(135deg, rgba(56,189,248,0.9), rgba(167,139,250,0.9));
+      box-shadow: 0 10px 30px rgba(56,189,248,0.15);
+    }
+    .brand h1{ font-size: 14px; margin: 0; }
+    .brand p{ margin: 0; font-size: 12px; color: var(--muted2); }
+
+    .nav { display:flex; gap: 10px; flex-wrap: wrap; justify-content:center; }
+    .btn{
+      display:inline-flex; align-items:center; gap: 10px;
+      padding: 10px 14px; border-radius: 999px;
+      border: 1px solid var(--border);
+      background: rgba(255,255,255,0.04);
+      color: var(--text); font-weight: 650; font-size: 13px;
+    }
+    .btn.primary{
+      background: linear-gradient(135deg, rgba(56,189,248,0.18), rgba(167,139,250,0.16));
+      border-color: rgba(167,139,250,0.26);
+    }
+
+    h2{ margin: 18px 0 8px; font-size: 20px; }
+    p.lead{ margin: 0 0 14px; color: var(--muted); font-size: 14px; }
+
+    .list { display: grid; gap: 12px; }
+    .pub{
+      padding: 14px 16px;
+      border-radius: var(--radius2);
+      border: 1px solid var(--border);
+      background: rgba(255,255,255,0.05);
+      box-shadow: var(--shadow);
+    }
+    .pub-row{
+      display: grid;
+      grid-template-columns: 140px 1fr;
+      gap: 14px;
+      align-items: start;
+    }
+    .pub-fig{
+      width: 140px;
+      aspect-ratio: 16 / 10;
+      border-radius: 12px;
+      border: 1px solid var(--border);
+      background: rgba(255,255,255,0.04);
+      overflow: hidden;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .pub-fig img{ width: 100%; height: 100%; object-fit: cover; display:block; }
+    .pub-fig .placeholder{ font-size: 12px; color: var(--muted2); padding: 10px; text-align:center; }
+
+    .title{ margin: 0 0 4px; font-weight: 750; font-size: 14px; }
+    .authors{ margin: 0 0 4px; color: var(--muted); font-size: 13px; }
+    .venue{ margin: 0; color: var(--muted2); font-size: 12px; }
+    .links{ margin-top: 8px; display:flex; gap: 10px; flex-wrap: wrap; }
+    .links a{ font-size: 12px; text-decoration: underline; text-underline-offset: 3px; color: rgba(255,255,255,0.85); }
+
+    .badges{ margin-top: 8px; display:flex; gap: 8px; flex-wrap: wrap; align-items: center; }
+    .badge{
+      font-size: 11px;
+      padding: 4px 9px;
+      border-radius: 999px;
+      border: 1px solid var(--border);
+      background: rgba(255,255,255,0.03);
+      color: var(--muted);
+      white-space: nowrap;
+    }
+    .badges .altmetric-embed,
+    .badges .__dimensions_badge_embed__{
+      display: inline-flex;
+      align-items: center;
+      transform: translateY(1px);
+    }
+
+    @media (max-width: 700px){
+      .pub-row{ grid-template-columns: 1fr; }
+      .pub-fig{ width: 100%; }
+    }
+  </style>
+</head>
+
+<body>
+  <header class="topbar">
+    <div class="topbar-inner">
+      <a class="brand" href="index.html">
+        <div class="avatar" aria-hidden="true"></div>
+        <div>
+          <h1>Von Ralph Herbuela</h1>
+          <p>Publications</p>
+        </div>
+      </a>
+
+      <nav class="nav" aria-label="Primary navigation">
+        <a class="btn" href="research.html">Research</a>
+        <a class="btn" href="projects.html">Projects</a>
+        <a class="btn primary" href="publications.html">Publications</a>
+        <a class="btn" href="conferences.html">Conferences</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="wrap">
+    <h2>Publications</h2>
+    <p class="lead">
+      Structured list with representative figures and metrics. (If a thumbnail is missing, upload it later and it will appear automatically.)
+    </p>
+
+    <h3 style="margin: 14px 0 10px; font-size: 14px; color: rgba(255,255,255,0.85);">Journal Articles (Peer-Reviewed)</h3>
+    <div class="list">
+
+      <!-- Frontiers 2023 -->
+      <div class="pub">
+        <div class="pub-row">
+          <div class="pub-fig">
+            <img src="assets/pubs/2023_frontiers_weather-time_pimid.png"
+                 alt="Representative figure: Frontiers in Psychiatry 2023"
+                 onerror="this.remove(); this.parentElement.innerHTML='<div class=&quot;placeholder&quot;>Upload later:<br>assets/pubs/2023_frontiers_weather-time_pimid.png</div>';">
+          </div>
+          <div>
+            <p class="title">Multilevel and general linear modeling of weather and time effects on the emotional and behavioral states of children with profound intellectual and multiple disabilities</p>
+            <p class="authors"><b>Herbuela, V. R. D. M.</b>, Karita, T., Toya, A., Furukawa, Y., Senba, S., Onishi, E., &amp; Saeki, T.</p>
+            <p class="venue">Frontiers in Psychiatry, 14, 1235582 • 2023</p>
+
+            <div class="links">
+              <a href="https://doi.org/10.3389/fpsyt.2023.1235582" target="_blank" rel="noopener">DOI</a>
+            </div>
+
+            <div class="badges">
+              <span class="badge">Journal</span>
+              <span class="badge">First author</span>
+
+              <span class="__dimensions_badge_embed__"
+                    data-doi="10.3389/fpsyt.2023.1235582"
+                    data-style="small_circle"></span>
+
+              <div class="altmetric-embed"
+                   data-badge-type="donut"
+                   data-doi="10.3389/fpsyt.2023.1235582"
+                   data-hide-no-mentions="true"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Add the rest (we can paste your remaining blocks here next) -->
+    </div>
+  </main>
+</body>
+</html>
