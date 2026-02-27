@@ -134,9 +134,9 @@
     }
     .hero-grid {
       display: grid;
-      grid-template-columns: 200px 1fr;
+      grid-template-columns: 220px 1fr;
       gap: 24px;
-      align-items: stretch;
+      align-items: start;
     }
     .card {
       background: var(--panel);
@@ -148,13 +148,13 @@
 
     /* ===== Profile Image (Hero Left Side) ===== */
     .profile-pic{
-      width: 100%;
-      aspect-ratio: 1 / 1;
-      border-radius: 16px;
-      border: 1px solid var(--border);
-      background: rgba(255,255,255,0.04);
+      width: 180px;
+      height: 180px;
+      border-radius: 50%;
+      border: 2px solid rgba(255,255,255,0.15);
       overflow: hidden;
-      box-shadow: var(--shadow);
+      box-shadow: 0 15px 40px rgba(0,0,0,0.4);
+      align-self: start;
     }
     
     .profile-pic img{
