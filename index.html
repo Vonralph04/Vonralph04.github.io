@@ -248,6 +248,53 @@
     .pub .links { margin-top: 8px; display:flex; gap: 10px; flex-wrap: wrap; }
     .pub .links a { font-size: 12px; text-decoration: underline; text-underline-offset: 3px; color: rgba(255,255,255,0.85); }
 
+    .pub-row{
+      display: grid;
+      grid-template-columns: 140px 1fr;
+      gap: 14px;
+      align-items: start;
+    }
+    .pub-fig{
+      width: 140px;
+      aspect-ratio: 16 / 10;
+      border-radius: 12px;
+      border: 1px solid var(--border);
+      background: rgba(255,255,255,0.04);
+      overflow: hidden;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .pub-fig img{
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+    .pub-fig .placeholder{
+      font-size: 12px;
+      color: var(--muted2);
+      padding: 10px;
+      text-align: center;
+    }
+    .badges{
+      margin-top: 8px;
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+    }
+    .badge{
+      font-size: 11px;
+      padding: 4px 9px;
+      border-radius: 999px;
+      border: 1px solid var(--border);
+      background: rgba(255,255,255,0.03);
+      color: var(--muted);
+    }
+    @media (max-width: 700px){
+      .pub-row{ grid-template-columns: 1fr; }
+      .pub-fig{ width: 100%; }
+    }
     footer {
       padding: 28px 0 40px;
       color: var(--muted2);
@@ -413,166 +460,376 @@
     <!-- Publications -->
     <section id="publications" class="section">
       <h2>Publications</h2>
-        <p class="lead">
-          Peer-reviewed articles, conference/short papers, and books. Metrics (from your CV): 9 publications, 8 first-authored; citations 104 (ResearchGate) / 130 (Google Scholar); h-index 6.
-        </p>
-      
-        <h3 style="margin: 14px 0 10px; font-size: 14px; color: rgba(255,255,255,0.85);">Peer-reviewed articles</h3>
-        <div class="list">
-          <div class="pub">
-            <p class="title">Realtime multimodal emotion estimation using behavioral and neurophysiological data</p>
-            <p class="authors">Herbuela, V. R. D. M., &amp; Nagai, Y.</p>
-            <p class="venue">ICMI ’25 (ACM), pp. 785–787 • 2025</p>
-            <div class="links">
-              <a href="https://doi.org/10.1145/3716553.3757092" target="_blank" rel="noopener">DOI</a>
+      <p class="lead">
+        Organized by type (journals, peer-reviewed conference proceedings, technical reports/symposia, book chapters, and contributions).
+        Metrics (from CV): 9 publications, 8 first-authored; citations 104 (ResearchGate) / 130 (Google Scholar); h-index 6.
+      </p>
+    
+      <!-- Journals -->
+      <h3 style="margin: 14px 0 10px; font-size: 14px; color: rgba(255,255,255,0.85);">Journal Articles (Peer-Reviewed)</h3>
+      <div class="list">
+    
+        <div class="pub">
+          <div class="pub-row">
+            <div class="pub-fig">
+              <img src="assets/pubs/2023_frontiers_weather-time_pimid.png" alt="Representative figure: Frontiers in Psychiatry 2023" onerror="this.remove(); this.parentElement.innerHTML='<div class=&quot;placeholder&quot;>Add thumbnail:<br>assets/pubs/2023_frontiers_weather-time_pimid.png</div>';">
             </div>
-          </div>
-      
-          <div class="pub">
-            <p class="title">Foundation feature-guided hierarchical fusion of EEG-physiological for emotion estimation</p>
-            <p class="authors">Zhang, H., Herbuela, V. R. D. M., &amp; Nagai, Y.</p>
-            <p class="venue">ICMI ’25 (ACM), pp. 44–50 • 2025</p>
-            <div class="links">
-              <a href="https://doi.org/10.1145/3716553.3750783" target="_blank" rel="noopener">DOI</a>
-            </div>
-          </div>
-      
-          <div class="pub">
-            <p class="title">Multilevel and general linear modeling of weather and time effects on the emotional and behavioral states of children with profound intellectual and multiple disabilities</p>
-            <p class="authors">Herbuela, V. R. D. M., Karita, T., Toya, A., Furukawa, Y., Senba, S., Onishi, E., &amp; Saeki, T.</p>
-            <p class="venue">Frontiers in Psychiatry, 14, 1235582 • 2023</p>
-            <div class="links">
-              <a href="https://doi.org/10.3389/fpsyt.2023.1235582" target="_blank" rel="noopener">DOI</a>
-            </div>
-          </div>
-      
-          <div class="pub">
-            <p class="title">Machine learning-based classification of the movements of children with profound or severe intellectual or multiple disabilities using environment data features</p>
-            <p class="authors">Herbuela, V. R. D. M., Karita, T., Furukawa, Y., Wada, Y., Toya, A., Senba, S., et al.</p>
-            <p class="venue">PLoS ONE, 17(6), e0269472 • 2022</p>
-            <div class="links">
-              <a href="https://doi.org/10.1371/journal.pone.0269472" target="_blank" rel="noopener">DOI</a>
-            </div>
-          </div>
-      
-          <div class="pub">
-            <p class="title">Integrating behavior of children with profound intellectual, multiple, or severe motor disabilities with location and environment data sensors for independent communication and mobility: App development and pilot testing</p>
-            <p class="authors">Herbuela, V. R. D. M., Karita, T., Furukawa, Y., Wada, Y., Yagi, Y., Senba, S., Onishi, E., &amp; Saeki, T.</p>
-            <p class="venue">JMIR Rehabilitation and Assistive Technologies, 8(2), e28020 • 2021</p>
-            <div class="links">
-              <a href="https://doi.org/10.2196/28020" target="_blank" rel="noopener">DOI</a>
-            </div>
-          </div>
-      
-          <div class="pub">
-            <p class="title">Early detection of dengue fever outbreaks using a surveillance app (Mozzify): Cross-sectional mixed methods usability study</p>
-            <p class="authors">Herbuela, V. R. D. M., Karita, T., Carvajal, T. M., Ho, H. T., Lorena, J. M. O., Regalado, R. A., Sobrepeña, G. D., &amp; Watanabe, K.</p>
-            <p class="venue">JMIR Public Health and Surveillance, 7(3), e19034 • 2021</p>
-            <div class="links">
-              <a href="https://doi.org/10.2196/19034" target="_blank" rel="noopener">DOI</a>
-            </div>
-          </div>
-      
-          <div class="pub">
-            <p class="title">An integrated mHealth app for dengue reporting and mapping, health communication, and behavior modification: Development and assessment of Mozzify</p>
-            <p class="authors">Herbuela, V. R. D. M., Karita, T., Francisco, M. E., &amp; Watanabe, K.</p>
-            <p class="venue">JMIR Formative Research, 4(1), e16424 • 2020</p>
-            <div class="links">
-              <a href="https://doi.org/10.2196/16424" target="_blank" rel="noopener">DOI</a>
-            </div>
-          </div>
-      
-          <div class="pub">
-            <p class="title">Depressive and anxiety symptoms among pediatric in-patients with dengue fever: A case-control study</p>
-            <p class="authors">Herbuela, V. R. D. M., de Guzman, F. S., Sobrepeña, G. D., Claudio, A. B. F., Tomas, A. C. V., Arriola-delos Reyes, C. M., Regalado, R. A., Teodoro, M. M., &amp; Watanabe, K.</p>
-            <p class="venue">International Journal of Environmental Research and Public Health, 17(1), 99 • 2020</p>
-            <div class="links">
-              <a href="https://doi.org/10.3390/ijerph17010099" target="_blank" rel="noopener">DOI</a>
-            </div>
-          </div>
-      
-          <div class="pub">
-            <p class="title">Knowledge, attitude, and practices regarding dengue fever among pediatric and adult in-patients in Metro Manila, Philippines</p>
-            <p class="authors">Herbuela, V. R. D. M., de Guzman, F. S., Sobrepeña, G. D., Claudio, A. B. F., Tomas, A. C. V., Arriola-delos Reyes, C. M., Regalado, R. A., Teodoro, M. M., &amp; Watanabe, K.</p>
-            <p class="venue">International Journal of Environmental Research and Public Health, 16(23), 4705 • 2019</p>
-            <div class="links">
-              <a href="https://doi.org/10.3390/ijerph16234705" target="_blank" rel="noopener">DOI</a>
+            <div>
+              <p class="title">Multilevel and general linear modeling of weather and time effects on the emotional and behavioral states of children with profound intellectual and multiple disabilities</p>
+              <p class="authors"><b>Herbuela, V. R. D. M.</b>, Karita, T., Toya, A., Furukawa, Y., Senba, S., Onishi, E., &amp; Saeki, T.</p>
+              <p class="venue">Frontiers in Psychiatry, 14, 1235582 • 2023</p>
+              <div class="links">
+                <a href="https://doi.org/10.3389/fpsyt.2023.1235582" target="_blank" rel="noopener">DOI</a>
+              </div>
+              <div class="badges">
+                <span class="badge">Journal</span>
+                <span class="badge">First author</span>
+                <span class="badge">Peer-reviewed</span>
+              </div>
             </div>
           </div>
         </div>
-      
-        <h3 style="margin: 18px 0 10px; font-size: 14px; color: rgba(255,255,255,0.85);">Non-peer-reviewed (short / conference papers)</h3>
-        <div class="list">
-          <div class="pub">
-            <p class="title">Utilization of Sensors as Switch Interface via Webhook and WebSocket</p>
-            <p class="authors">Takasuka, J., Herbuela, V. R. D. M., &amp; Karita, T.</p>
-            <p class="venue">IEICE Technical Report (Web), 123(81, WIT2023 1–17), 71–73 • 2023</p>
-          </div>
-      
-          <div class="pub">
-            <p class="title">Enhancing the accessibility of digital teaching materials in a learning management system for higher education institutions</p>
-            <p class="authors">Takasuka, J., Karita, T., Herbuela, V. R. D. M., Kuwaki, H., Konno, J., Murase, Y., Peralez, T. R., Okazaki, K., Yagi, R., &amp; Matsumoto, Y.</p>
-            <p class="venue">Human Interface Symposium • 2023</p>
-          </div>
-      
-          <div class="pub">
-            <p class="title">Hearing loss among children in some Western Pacific and South-East Asian WHO countries: Reports from the Philippines, Vietnam, Thailand, and Bangladesh</p>
-            <p class="authors">Herbuela, V. R. D. M., Karita, T., Konno, J., Toya, A., &amp; Takeuchi, A.</p>
-            <p class="venue">Bulletin of the Center for Inclusive Education, Ehime University • (in press) • 2022</p>
-          </div>
-      
-          <div class="pub">
-            <p class="title">Remote class support system for children with long-term absences: Operational stability test of the pointing movement magnification function</p>
-            <p class="authors">Toya, A., Karita, T., Herbuela, V. R. D. M., Shibata, S., Mu, S., &amp; Yamamoto, T.</p>
-            <p class="venue">HCG Symposium • 2022</p>
-          </div>
-      
-          <div class="pub">
-            <p class="title">Status and process of providing the audio teaching materials UNLOCK: Reconsidering the need for auditory and spoken information-centered teaching materials in educational settings</p>
-            <p class="authors">Karita, T., Yagi, Y., Herbuela, V. R. D. M., Wada, Y., &amp; Murakami, S.</p>
-            <p class="venue">Annual Meeting of the Japan Educational Information Society, 36, 228–229 • 2020</p>
-          </div>
-      
-          <div class="pub">
-            <p class="title">Development of a desire estimation system for children with severe mental and physical disabilities: Development process using smart speakers</p>
-            <p class="authors">Karita, T., Furukawa, Y., Wada, Y., Yagi, Y., Herbuela, V. R. D. M., Saeki, T., &amp; Senba, S.</p>
-            <p class="venue">Annual Meeting of the Japan Educational Information Society, 36, 110–113 • 2020</p>
-          </div>
-      
-          <div class="pub">
-            <p class="title">iBehave: Development of a behavior frequency recorder mobile application for children with autism and other neurodevelopmental disorders</p>
-            <p class="authors">Herbuela, V. R. D. M., Karita, T., Watanabe, K., Yagi, Y., Hoshikawa, R., &amp; Oota, T.</p>
-            <p class="venue">WIT Conference (IEICE), 116, 31–35 • 2017</p>
-          </div>
-      
-          <div class="pub">
-            <p class="title">A questionnaire survey about teachers' individual and environmental factors of practical ICT uses in special schools</p>
-            <p class="authors">Hoshikawa, R., Karita, T., Yagi, Y., Herbuela, V. R. D. M., &amp; Yeonkyung, E.</p>
-            <p class="venue">WIT Conference (IEICE), 116, 37–40 • 2017</p>
-          </div>
-        </div>
-      
-        <h3 style="margin: 18px 0 10px; font-size: 14px; color: rgba(255,255,255,0.85);">Books</h3>
-        <div class="list">
-          <div class="pub">
-            <p class="title">Ausdrucksmöglichkeiten entdecken: Auf maschinellem Lernen basierende Bewegungsklassifizierung von Kindern mit komplexen Behinderungen (Unlocking Expressive Pathways: Machine Learning-Based Movement Classification of Children with Profound Intellectual and Multiple Disabilities)</p>
-            <p class="authors">Herbuela, V. R. D. M., Karita, T., Toya, A., Takasuka, J., &amp; Konno, J.</p>
-            <p class="venue">In P. Zentel, V. Munde, C. Keeley, &amp; D. Lutz (Eds.), <i>Komplexe Behinderungen: Internationale Perspektiven</i>, pp. 389–402 • 2025</p>
-            <div class="links">
-              <a href="https://www.amazon.de/Komplexe-Behinderungen-Internationale-Perspektiven-Behinderung/dp/3763978593" target="_blank" rel="noopener">Link</a>
+    
+        <div class="pub">
+          <div class="pub-row">
+            <div class="pub-fig">
+              <img src="assets/pubs/2022_plosone_movement-classification.png" alt="Representative figure: PLoS ONE 2022" onerror="this.remove(); this.parentElement.innerHTML='<div class=&quot;placeholder&quot;>Add thumbnail:<br>assets/pubs/2022_plosone_movement-classification.png</div>';">
             </div>
-          </div>
-      
-          <div class="pub">
-            <p class="title">National ethical guidelines for research involving human participants (NEGRIHP 2022)</p>
-            <p class="authors">Herbuela, V. R. D. M. (Contributor)</p>
-            <p class="venue">Philippine Council for Health Research and Development • 2022</p>
-            <div class="links">
-              <a href="https://www.pchrd.dost.gov.ph/wp-content/uploads/2023/05/2022-NEGRIHP_Official-Gazatte_Ver-5-1.pdf" target="_blank" rel="noopener">PDF</a>
+            <div>
+              <p class="title">Machine learning-based classification of the movements of children with profound or severe intellectual or multiple disabilities using environment data features</p>
+              <p class="authors"><b>Herbuela, V. R. D. M.</b>, Karita, T., Furukawa, Y., Wada, Y., Toya, A., Senba, S., et al.</p>
+              <p class="venue">PLoS ONE, 17(6), e0269472 • 2022</p>
+              <div class="links">
+                <a href="https://doi.org/10.1371/journal.pone.0269472" target="_blank" rel="noopener">DOI</a>
+              </div>
+              <div class="badges">
+                <span class="badge">Journal</span>
+                <span class="badge">First author</span>
+                <span class="badge">Peer-reviewed</span>
+              </div>
             </div>
           </div>
         </div>
-      </section>
+    
+        <div class="pub">
+          <div class="pub-row">
+            <div class="pub-fig">
+              <img src="assets/pubs/2021_jmir_rehab_mobility-app.png" alt="Representative figure: JMIR Rehab 2021" onerror="this.remove(); this.parentElement.innerHTML='<div class=&quot;placeholder&quot;>Add thumbnail:<br>assets/pubs/2021_jmir_rehab_mobility-app.png</div>';">
+            </div>
+            <div>
+              <p class="title">Integrating behavior of children with profound intellectual, multiple, or severe motor disabilities with location and environment data sensors for independent communication and mobility: App development and pilot testing</p>
+              <p class="authors"><b>Herbuela, V. R. D. M.</b>, Karita, T., Furukawa, Y., Wada, Y., Yagi, Y., Senba, S., Onishi, E., &amp; Saeki, T.</p>
+              <p class="venue">JMIR Rehabilitation and Assistive Technologies, 8(2), e28020 • 2021</p>
+              <div class="links">
+                <a href="https://doi.org/10.2196/28020" target="_blank" rel="noopener">DOI</a>
+              </div>
+              <div class="badges">
+                <span class="badge">Journal</span>
+                <span class="badge">First author</span>
+                <span class="badge">Peer-reviewed</span>
+              </div>
+            </div>
+          </div>
+        </div>
+    
+        <div class="pub">
+          <div class="pub-row">
+            <div class="pub-fig">
+              <img src="assets/pubs/2021_jmir_phs_mozzify-usability.png" alt="Representative figure: JMIR PHS 2021" onerror="this.remove(); this.parentElement.innerHTML='<div class=&quot;placeholder&quot;>Add thumbnail:<br>assets/pubs/2021_jmir_phs_mozzify-usability.png</div>';">
+            </div>
+            <div>
+              <p class="title">Early detection of dengue fever outbreaks using a surveillance app (Mozzify): Cross-sectional mixed methods usability study</p>
+              <p class="authors"><b>Herbuela, V. R. D. M.</b>, Karita, T., Carvajal, T. M., Ho, H. T., Lorena, J. M. O., Regalado, R. A., Sobrepeña, G. D., &amp; Watanabe, K.</p>
+              <p class="venue">JMIR Public Health and Surveillance, 7(3), e19034 • 2021</p>
+              <div class="links">
+                <a href="https://doi.org/10.2196/19034" target="_blank" rel="noopener">DOI</a>
+              </div>
+              <div class="badges">
+                <span class="badge">Journal</span>
+                <span class="badge">First author</span>
+                <span class="badge">Peer-reviewed</span>
+              </div>
+            </div>
+          </div>
+        </div>
+    
+        <div class="pub">
+          <div class="pub-row">
+            <div class="pub-fig">
+              <img src="assets/pubs/2020_jmir_formative_mozzify-development.png" alt="Representative figure: JMIR Formative 2020" onerror="this.remove(); this.parentElement.innerHTML='<div class=&quot;placeholder&quot;>Add thumbnail:<br>assets/pubs/2020_jmir_formative_mozzify-development.png</div>';">
+            </div>
+            <div>
+              <p class="title">An integrated mHealth app for dengue reporting and mapping, health communication, and behavior modification: Development and assessment of Mozzify</p>
+              <p class="authors"><b>Herbuela, V. R. D. M.</b>, Karita, T., Francisco, M. E., &amp; Watanabe, K.</p>
+              <p class="venue">JMIR Formative Research, 4(1), e16424 • 2020</p>
+              <div class="links">
+                <a href="https://doi.org/10.2196/16424" target="_blank" rel="noopener">DOI</a>
+              </div>
+              <div class="badges">
+                <span class="badge">Journal</span>
+                <span class="badge">First author</span>
+                <span class="badge">Peer-reviewed</span>
+              </div>
+            </div>
+          </div>
+        </div>
+    
+        <div class="pub">
+          <div class="pub-row">
+            <div class="pub-fig">
+              <img src="assets/pubs/2020_ijerph_dengue_anxiety-depression.png" alt="Representative figure: IJERPH 2020" onerror="this.remove(); this.parentElement.innerHTML='<div class=&quot;placeholder&quot;>Add thumbnail:<br>assets/pubs/2020_ijerph_dengue_anxiety-depression.png</div>';">
+            </div>
+            <div>
+              <p class="title">Depressive and anxiety symptoms among pediatric in-patients with dengue fever: A case-control study</p>
+              <p class="authors"><b>Herbuela, V. R. D. M.</b>, de Guzman, F. S., Sobrepeña, G. D., Claudio, A. B. F., Tomas, A. C. V., Arriola-delos Reyes, C. M., Regalado, R. A., Teodoro, M. M., &amp; Watanabe, K.</p>
+              <p class="venue">International Journal of Environmental Research and Public Health, 17(1), 99 • 2020</p>
+              <div class="links">
+                <a href="https://doi.org/10.3390/ijerph17010099" target="_blank" rel="noopener">DOI</a>
+              </div>
+              <div class="badges">
+                <span class="badge">Journal</span>
+                <span class="badge">First author</span>
+                <span class="badge">Peer-reviewed</span>
+              </div>
+            </div>
+          </div>
+        </div>
+    
+        <div class="pub">
+          <div class="pub-row">
+            <div class="pub-fig">
+              <img src="assets/pubs/2019_ijerph_dengue_kap.png" alt="Representative figure: IJERPH 2019" onerror="this.remove(); this.parentElement.innerHTML='<div class=&quot;placeholder&quot;>Add thumbnail:<br>assets/pubs/2019_ijerph_dengue_kap.png</div>';">
+            </div>
+            <div>
+              <p class="title">Knowledge, attitude, and practices regarding dengue fever among pediatric and adult in-patients in Metro Manila, Philippines</p>
+              <p class="authors"><b>Herbuela, V. R. D. M.</b>, de Guzman, F. S., Sobrepeña, G. D., Claudio, A. B. F., Tomas, A. C. V., Arriola-delos Reyes, C. M., Regalado, R. A., Teodoro, M. M., &amp; Watanabe, K.</p>
+              <p class="venue">International Journal of Environmental Research and Public Health, 16(23), 4705 • 2019</p>
+              <div class="links">
+                <a href="https://doi.org/10.3390/ijerph16234705" target="_blank" rel="noopener">DOI</a>
+              </div>
+              <div class="badges">
+                <span class="badge">Journal</span>
+                <span class="badge">First author</span>
+                <span class="badge">Peer-reviewed</span>
+              </div>
+            </div>
+          </div>
+        </div>
+    
+      </div>
+    
+      <!-- Peer-reviewed conferences -->
+      <h3 style="margin: 18px 0 10px; font-size: 14px; color: rgba(255,255,255,0.85);">Conference Proceedings (Peer-Reviewed)</h3>
+      <div class="list">
+    
+        <div class="pub">
+          <div class="pub-row">
+            <div class="pub-fig">
+              <img src="assets/pubs/2025_icmi_realtime_multimodal_emotion.png" alt="Representative figure: ICMI 2025 paper" onerror="this.remove(); this.parentElement.innerHTML='<div class=&quot;placeholder&quot;>Add thumbnail:<br>assets/pubs/2025_icmi_realtime_multimodal_emotion.png</div>';">
+            </div>
+            <div>
+              <p class="title">Realtime multimodal emotion estimation using behavioral and neurophysiological data</p>
+              <p class="authors"><b>Herbuela, V. R. D. M.</b>, &amp; Nagai, Y.</p>
+              <p class="venue">ICMI ’25 (ACM), pp. 785–787 • 2025</p>
+              <div class="links">
+                <a href="https://doi.org/10.1145/3716553.3757092" target="_blank" rel="noopener">DOI</a>
+              </div>
+              <div class="badges">
+                <span class="badge">Conference</span>
+                <span class="badge">First author</span>
+                <span class="badge">Peer-reviewed</span>
+              </div>
+            </div>
+          </div>
+        </div>
+    
+        <div class="pub">
+          <div class="pub-row">
+            <div class="pub-fig">
+              <img src="assets/pubs/2025_icmi_hierarchical_fusion.png" alt="Representative figure: ICMI 2025 fusion paper" onerror="this.remove(); this.parentElement.innerHTML='<div class=&quot;placeholder&quot;>Add thumbnail:<br>assets/pubs/2025_icmi_hierarchical_fusion.png</div>';">
+            </div>
+            <div>
+              <p class="title">Foundation feature-guided hierarchical fusion of EEG-physiological for emotion estimation</p>
+              <p class="authors">Zhang, H., Herbuela, V. R. D. M., &amp; Nagai, Y.</p>
+              <p class="venue">ICMI ’25 (ACM), pp. 44–50 • 2025</p>
+              <div class="links">
+                <a href="https://doi.org/10.1145/3716553.3750783" target="_blank" rel="noopener">DOI</a>
+              </div>
+              <div class="badges">
+                <span class="badge">Conference</span>
+                <span class="badge">Peer-reviewed</span>
+              </div>
+            </div>
+          </div>
+        </div>
+    
+      </div>
+    
+      <!-- Technical reports & symposia -->
+      <h3 style="margin: 18px 0 10px; font-size: 14px; color: rgba(255,255,255,0.85);">Technical Reports &amp; Symposium Papers</h3>
+      <div class="list">
+    
+        <div class="pub">
+          <div class="pub-row">
+            <div class="pub-fig">
+              <img src="assets/pubs/2023_ieice_webhook_websocket.png" alt="Representative figure: IEICE 2023" onerror="this.remove(); this.parentElement.innerHTML='<div class=&quot;placeholder&quot;>Optional thumbnail:<br>assets/pubs/2023_ieice_webhook_websocket.png</div>';">
+            </div>
+            <div>
+              <p class="title">Utilization of Sensors as Switch Interface via Webhook and WebSocket</p>
+              <p class="authors">Takasuka, J., <b>Herbuela, V. R. D. M.</b>, &amp; Karita, T.</p>
+              <p class="venue">IEICE Technical Report (Web), 123(81, WIT2023 1–17), 71–73 • 2023</p>
+              <div class="badges">
+                <span class="badge">Technical report</span>
+              </div>
+            </div>
+          </div>
+        </div>
+    
+        <div class="pub">
+          <div class="pub-row">
+            <div class="pub-fig">
+              <img src="assets/pubs/2023_his_accessibility_lms.png" alt="Representative figure: Human Interface Symposium 2023" onerror="this.remove(); this.parentElement.innerHTML='<div class=&quot;placeholder&quot;>Optional thumbnail:<br>assets/pubs/2023_his_accessibility_lms.png</div>';">
+            </div>
+            <div>
+              <p class="title">Enhancing the accessibility of digital teaching materials in a learning management system for higher education institutions</p>
+              <p class="authors">Takasuka, J., Karita, T., <b>Herbuela, V. R. D. M.</b>, Kuwaki, H., Konno, J., Murase, Y., Peralez, T. R., Okazaki, K., Yagi, R., &amp; Matsumoto, Y.</p>
+              <p class="venue">Human Interface Symposium • 2023</p>
+              <div class="badges">
+                <span class="badge">Symposium</span>
+              </div>
+            </div>
+          </div>
+        </div>
+    
+        <div class="pub">
+          <div class="pub-row">
+            <div class="pub-fig">
+              <img src="assets/pubs/2022_hcg_remote_support_system.png" alt="Representative figure: HCG Symposium 2022" onerror="this.remove(); this.parentElement.innerHTML='<div class=&quot;placeholder&quot;>Optional thumbnail:<br>assets/pubs/2022_hcg_remote_support_system.png</div>';">
+            </div>
+            <div>
+              <p class="title">Remote class support system for children with long-term absences: Operational stability test of the pointing movement magnification function</p>
+              <p class="authors">Toya, A., Karita, T., <b>Herbuela, V. R. D. M.</b>, Shibata, S., Mu, S., &amp; Yamamoto, T.</p>
+              <p class="venue">HCG Symposium • 2022</p>
+              <div class="badges">
+                <span class="badge">Symposium</span>
+              </div>
+            </div>
+          </div>
+        </div>
+    
+        <div class="pub">
+          <div class="pub-row">
+            <div class="pub-fig">
+              <img src="assets/pubs/2020_jeis_unlock_audio_materials.png" alt="Representative figure: JEIS 2020 UNLOCK" onerror="this.remove(); this.parentElement.innerHTML='<div class=&quot;placeholder&quot;>Optional thumbnail:<br>assets/pubs/2020_jeis_unlock_audio_materials.png</div>';">
+            </div>
+            <div>
+              <p class="title">Status and process of providing the audio teaching materials UNLOCK: Reconsidering the need for auditory and spoken information-centered teaching materials in educational settings</p>
+              <p class="authors">Karita, T., Yagi, Y., <b>Herbuela, V. R. D. M.</b>, Wada, Y., &amp; Murakami, S.</p>
+              <p class="venue">Annual Meeting of the Japan Educational Information Society, 36, 228–229 • 2020</p>
+              <div class="badges">
+                <span class="badge">Proceedings</span>
+              </div>
+            </div>
+          </div>
+        </div>
+    
+        <div class="pub">
+          <div class="pub-row">
+            <div class="pub-fig">
+              <img src="assets/pubs/2020_jeis_smart_speaker_desire_estimation.png" alt="Representative figure: JEIS 2020 smart speaker" onerror="this.remove(); this.parentElement.innerHTML='<div class=&quot;placeholder&quot;>Optional thumbnail:<br>assets/pubs/2020_jeis_smart_speaker_desire_estimation.png</div>';">
+            </div>
+            <div>
+              <p class="title">Development of a desire estimation system for children with severe mental and physical disabilities: Development process using smart speakers</p>
+              <p class="authors">Karita, T., Furukawa, Y., Wada, Y., Yagi, Y., <b>Herbuela, V. R. D. M.</b>, Saeki, T., &amp; Senba, S.</p>
+              <p class="venue">Annual Meeting of the Japan Educational Information Society, 36, 110–113 • 2020</p>
+              <div class="badges">
+                <span class="badge">Proceedings</span>
+              </div>
+            </div>
+          </div>
+        </div>
+    
+        <div class="pub">
+          <div class="pub-row">
+            <div class="pub-fig">
+              <img src="assets/pubs/2017_wit_ibhave.png" alt="Representative figure: iBehave 2017" onerror="this.remove(); this.parentElement.innerHTML='<div class=&quot;placeholder&quot;>Optional thumbnail:<br>assets/pubs/2017_wit_ibhave.png</div>';">
+            </div>
+            <div>
+              <p class="title">iBehave: Development of a behavior frequency recorder mobile application for children with autism and other neurodevelopmental disorders</p>
+              <p class="authors"><b>Herbuela, V. R. D. M.</b>, Karita, T., Watanabe, K., Yagi, Y., Hoshikawa, R., &amp; Oota, T.</p>
+              <p class="venue">WIT Conference (IEICE), 116, 31–35 • 2017</p>
+              <div class="badges">
+                <span class="badge">Conference paper</span>
+                <span class="badge">First author</span>
+              </div>
+            </div>
+          </div>
+        </div>
+    
+        <div class="pub">
+          <div class="pub-row">
+            <div class="pub-fig">
+              <img src="assets/pubs/2017_wit_teacher_ict_survey.png" alt="Representative figure: ICT survey 2017" onerror="this.remove(); this.parentElement.innerHTML='<div class=&quot;placeholder&quot;>Optional thumbnail:<br>assets/pubs/2017_wit_teacher_ict_survey.png</div>';">
+            </div>
+            <div>
+              <p class="title">A questionnaire survey about teachers' individual and environmental factors of practical ICT uses in special schools</p>
+              <p class="authors">Hoshikawa, R., Karita, T., Yagi, Y., <b>Herbuela, V. R. D. M.</b>, &amp; Yeonkyung, E.</p>
+              <p class="venue">WIT Conference (IEICE), 116, 37–40 • 2017</p>
+              <div class="badges">
+                <span class="badge">Conference paper</span>
+              </div>
+            </div>
+          </div>
+        </div>
+    
+      </div>
+    
+      <!-- Book chapters -->
+      <h3 style="margin: 18px 0 10px; font-size: 14px; color: rgba(255,255,255,0.85);">Book Chapters</h3>
+      <div class="list">
+        <div class="pub">
+          <div class="pub-row">
+            <div class="pub-fig">
+              <img src="assets/pubs/2025_bookchapter_unlocking_expressive_pathways.png" alt="Representative figure: Book chapter 2025" onerror="this.remove(); this.parentElement.innerHTML='<div class=&quot;placeholder&quot;>Optional thumbnail:<br>assets/pubs/2025_bookchapter_unlocking_expressive_pathways.png</div>';">
+            </div>
+            <div>
+              <p class="title">Ausdrucksmöglichkeiten entdecken: Auf maschinellem Lernen basierende Bewegungsklassifizierung von Kindern mit komplexen Behinderungen (Unlocking Expressive Pathways: Machine Learning-Based Movement Classification of Children with Profound Intellectual and Multiple Disabilities)</p>
+              <p class="authors"><b>Herbuela, V. R. D. M.</b>, Karita, T., Toya, A., Takasuka, J., &amp; Konno, J.</p>
+              <p class="venue">In P. Zentel, V. Munde, C. Keeley, &amp; D. Lutz (Eds.), <i>Komplexe Behinderungen: Internationale Perspektiven</i>, pp. 389–402 • 2025</p>
+              <div class="links">
+                <a href="https://www.amazon.de/Komplexe-Behinderungen-Internationale-Perspektiven-Behinderung/dp/3763978593" target="_blank" rel="noopener">Link</a>
+              </div>
+              <div class="badges">
+                <span class="badge">Book chapter</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    
+      <!-- Contributions -->
+      <h3 style="margin: 18px 0 10px; font-size: 14px; color: rgba(255,255,255,0.85);">Research &amp; Policy Contributions</h3>
+      <div class="list">
+        <div class="pub">
+          <div class="pub-row">
+            <div class="pub-fig">
+              <img src="assets/pubs/2022_negrhip_guidelines.png" alt="Representative figure: NEGRIHP 2022" onerror="this.remove(); this.parentElement.innerHTML='<div class=&quot;placeholder&quot;>Optional thumbnail:<br>assets/pubs/2022_negrhip_guidelines.png</div>';">
+            </div>
+            <div>
+              <p class="title">National ethical guidelines for research involving human participants (NEGRIHP 2022)</p>
+              <p class="authors"><b>Herbuela, V. R. D. M.</b> (Contributor)</p>
+              <p class="venue">Philippine Council for Health Research and Development • 2022</p>
+              <div class="links">
+                <a href="https://www.pchrd.dost.gov.ph/wp-content/uploads/2023/05/2022-NEGRIHP_Official-Gazatte_Ver-5-1.pdf" target="_blank" rel="noopener">PDF</a>
+              </div>
+              <div class="badges">
+                <span class="badge">Contribution</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
 
     <!-- Conferences -->
     <section id="conferences" class="section">
