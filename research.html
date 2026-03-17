@@ -1,1 +1,316 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Research | Von Ralph Dane Marquez Herbuela, PhD</title>
+  <meta name="description" content="Research projects by Von Ralph Dane Marquez Herbuela, including OyaKoSync and multimodal measurement of mother-infant interaction." />
+  <style>
+    :root{
+      --bg: #0b1020;
+      --panel: rgba(255,255,255,0.06);
+      --panel2: rgba(255,255,255,0.09);
+      --text: rgba(255,255,255,0.92);
+      --muted: rgba(255,255,255,0.68);
+      --muted2: rgba(255,255,255,0.55);
+      --border: rgba(255,255,255,0.12);
+      --shadow: 0 20px 60px rgba(0,0,0,0.35);
+      --radius: 18px;
+      --radius2: 14px;
+      --maxw: 1040px;
+    }
 
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial, "Apple Color Emoji", "Segoe UI Emoji";
+      background:
+        radial-gradient(900px 600px at 20% 15%, rgba(56,189,248,0.18), transparent 60%),
+        radial-gradient(800px 500px at 85% 25%, rgba(167,139,250,0.16), transparent 60%),
+        radial-gradient(900px 600px at 45% 95%, rgba(34,197,94,0.10), transparent 55%),
+        var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+    }
+
+    a { color: inherit; text-decoration: none; }
+    a.link { text-decoration: underline; text-underline-offset: 3px; }
+
+    .wrap { max-width: var(--maxw); margin: 0 auto; padding: 24px; }
+
+    .topbar {
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      backdrop-filter: blur(10px);
+      background: rgba(11,16,32,0.55);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .topbar-inner {
+      max-width: var(--maxw);
+      margin: 0 auto;
+      padding: 14px 24px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      min-width: 180px;
+    }
+
+    .avatar {
+      width: 36px;
+      height: 36px;
+      border-radius: 12px;
+      background: linear-gradient(135deg, rgba(56,189,248,0.9), rgba(167,139,250,0.9));
+      box-shadow: 0 10px 30px rgba(56,189,248,0.15);
+    }
+
+    .brand h1 {
+      font-size: 14px;
+      margin: 0;
+      letter-spacing: 0.2px;
+    }
+
+    .brand p {
+      margin: 0;
+      font-size: 12px;
+      color: var(--muted2);
+      line-height: 1.2;
+    }
+
+    .nav {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      padding: 10px 14px;
+      border-radius: 999px;
+      border: 1px solid var(--border);
+      background: rgba(255,255,255,0.04);
+      color: var(--text);
+      font-weight: 650;
+      font-size: 13px;
+      transition: transform 0.15s ease, background 0.15s ease, border-color 0.15s ease;
+      user-select: none;
+      cursor: pointer;
+    }
+
+    .btn:hover {
+      transform: translateY(-1px);
+      background: rgba(255,255,255,0.07);
+      border-color: rgba(255,255,255,0.18);
+    }
+
+    .btn.primary {
+      background: linear-gradient(135deg, rgba(56,189,248,0.18), rgba(167,139,250,0.16));
+      border-color: rgba(167,139,250,0.26);
+    }
+
+    .hero {
+      padding: 36px 0 12px;
+    }
+
+    .card {
+      background: var(--panel);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+    }
+
+    .card-inner { padding: 24px; }
+
+    .headline {
+      margin: 0 0 8px;
+      font-size: clamp(28px, 4vw, 42px);
+      line-height: 1.15;
+      letter-spacing: -0.4px;
+    }
+
+    .subhead {
+      margin: 0;
+      color: var(--muted);
+      font-size: 15px;
+      max-width: 72ch;
+    }
+
+    .section {
+      margin-top: 18px;
+      padding: 10px 0;
+    }
+
+    .section h2 {
+      font-size: 20px;
+      margin: 0 0 8px;
+      letter-spacing: 0.2px;
+    }
+
+    .section p.lead {
+      margin: 0 0 14px;
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    .project {
+      background: rgba(255,255,255,0.05);
+      border: 1px solid var(--border);
+      border-radius: var(--radius2);
+      padding: 18px;
+      margin-top: 12px;
+    }
+
+    .project-title {
+      margin: 0 0 6px;
+      font-size: 20px;
+      font-weight: 800;
+    }
+
+    .meta {
+      margin: 0 0 12px;
+      color: var(--muted2);
+      font-size: 13px;
+    }
+
+    .desc {
+      margin: 0 0 14px;
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    .tags {
+      margin-top: 12px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+
+    .tag {
+      font-size: 12px;
+      padding: 6px 10px;
+      border-radius: 999px;
+      border: 1px solid var(--border);
+      background: rgba(255,255,255,0.03);
+      color: var(--muted);
+    }
+
+    .actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 16px;
+    }
+
+    .note {
+      margin-top: 14px;
+      font-size: 13px;
+      color: var(--muted2);
+    }
+
+    footer {
+      padding: 28px 0 40px;
+      color: var(--muted2);
+      font-size: 12px;
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+  <header class="topbar">
+    <div class="topbar-inner">
+      <a class="brand" href="index.html" aria-label="Go to homepage">
+        <div class="avatar" aria-hidden="true"></div>
+        <div>
+          <h1>Von Ralph Herbuela</h1>
+          <p>Project Research Associate • UTokyo (IRCN)</p>
+        </div>
+      </a>
+
+      <nav class="nav" aria-label="Primary navigation">
+        <a class="btn primary" href="research.html">Research</a>
+        <a class="btn" href="publications.html">Publications</a>
+        <a class="btn" href="conferences.html">Conferences</a>
+        <a class="btn" href="index.html#news">News</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="wrap">
+    <section class="hero">
+      <div class="card">
+        <div class="card-inner">
+          <h1 class="headline">Research</h1>
+          <p class="subhead">
+            My research focuses on physiological sensing, behavioral data analysis, and AI-driven systems for understanding cognitive, affective, and social interaction processes in real-world settings.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="card">
+        <div class="card-inner">
+          <h2>Featured Project</h2>
+          <p class="lead">
+            Selected work on multimodal measurement, parent-infant interaction, and naturalistic behavioral analysis.
+          </p>
+
+          <article class="project">
+            <h3 class="project-title">OyaKoSync</h3>
+            <p class="meta">Multimodal app for contextualized measurement of mother-infant interaction</p>
+
+            <p class="desc">
+              OyaKoSync is a lightweight multimodal measurement app designed to record and visualize natural parent-infant interaction in everyday settings. Using smartphone-based synchronized video and audio capture, together with physiology-related measures and emotion/context logs, the system supports temporally aligned review of interaction dynamics across multiple modalities.
+            </p>
+
+            <p class="desc">
+              The project was developed to help extend parent-infant interaction research beyond structured laboratory paradigms into more naturalistic environments. It supports multimodal observation of facial behavior, body movement, vocal activity, affect-related estimates, and contextual logging within a unified review framework.
+            </p>
+
+            <div class="tags">
+              <span class="tag">Mother-infant interaction</span>
+              <span class="tag">Multimodal sensing</span>
+              <span class="tag">Behavior analysis</span>
+              <span class="tag">Affective computing</span>
+              <span class="tag">Physiological signals</span>
+              <span class="tag">iOS app</span>
+            </div>
+
+            <div class="actions">
+              <a class="btn" href="mailto:herbuela.vonralphdane@mail.u-tokyo.ac.jp">Contact</a>
+              <a class="btn" href="publications.html">Related publications</a>
+            </div>
+
+            <p class="note">
+              Available in Japanese and English. Intended for research and observational support; not a medical device.
+            </p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <footer>
+      <div>
+        © <span id="year"></span> Von Ralph Herbuela •
+        <a class="link" href="mailto:herbuela.vonralphdane@mail.u-tokyo.ac.jp">herbuela.vonralphdane@mail.u-tokyo.ac.jp</a>
+      </div>
+    </footer>
+  </main>
+
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
