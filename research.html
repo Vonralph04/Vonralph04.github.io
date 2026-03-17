@@ -138,7 +138,6 @@
       max-width: 72ch;
     }
 
-    section { scroll-margin-top: 88px; }
     .section{
       margin-top: 18px;
       padding: 8px 0;
@@ -154,11 +153,10 @@
       font-size: 14px;
     }
 
-    .pillrow{
-      display: flex;
-      flex-wrap: wrap;
-      gap: 10px;
-      margin-top: 10px;
+    .project-link{
+      display: block;
+      text-decoration: none;
+      color: inherit;
     }
 
     .project{
@@ -167,7 +165,15 @@
       border-radius: var(--radius2);
       padding: 18px;
       margin-top: 12px;
+      transition: transform 0.18s ease, border-color 0.18s ease, background 0.18s ease;
+      cursor: pointer;
     }
+    .project-link:hover .project{
+      transform: translateY(-2px);
+      border-color: rgba(255,255,255,0.25);
+      background: rgba(255,255,255,0.06);
+    }
+
     .project-title{
       margin: 0 0 6px;
       font-size: 20px;
@@ -197,12 +203,6 @@
       background: rgba(255,255,255,0.03);
       color: var(--muted);
     }
-    .actions{
-      display: flex;
-      flex-wrap: wrap;
-      gap: 10px;
-      margin-top: 16px;
-    }
     .note{
       margin-top: 14px;
       font-size: 13px;
@@ -214,10 +214,6 @@
       color: var(--muted2);
       font-size: 12px;
       text-align: center;
-    }
-
-    @media (max-width: 900px){
-      .topbar-inner { gap: 10px; }
     }
   </style>
 </head>
@@ -257,63 +253,35 @@
     <section class="section">
       <div class="card">
         <div class="card-inner">
-          <h2>Research Topics</h2>
-          <p class="lead">
-            Select a topic below to jump to a featured project.
-          </p>
-
-          <div class="pillrow" style="margin-top:14px;">
-            <a class="btn primary" href="#oyakosync">OyaKoSync</a>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="section" id="featured-projects">
-      <div class="card">
-        <div class="card-inner">
           <h2>Featured Project</h2>
           <p class="lead">
-            Selected work on multimodal measurement, mother-infant interaction, and naturalistic behavioral analysis.
+            Click a project card to open its dedicated page.
           </p>
 
-          <article class="project" id="oyakosync">
-            <h3 class="project-title">OyaKoSync</h3>
-            <p class="meta">
-              A lightweight multimodal framework for contextualized measurement of mother-infant interaction
-            </p>
+          <a class="project-link" href="oyakosync.html" aria-label="Open OyaKoSync page">
+  <article class="project">
+    <h3 class="project-title">OyaKoSync</h3>
+    <p class="meta">
+      A lightweight multimodal framework for contextualized measurement of mother-infant interaction
+    </p>
 
-            <p class="desc">
-              OyaKoSync is a lightweight multimodal measurement system designed to record and visualize natural mother-infant interaction in everyday settings. Using smartphone-based synchronized front and back camera capture, audio recording, physiology-related measures, and emotion/context logs, the system supports temporally aligned review of interaction dynamics across multiple modalities.
-            </p>
+    <p class="desc">
+      OyaKoSync is a lightweight multimodal measurement system designed to record and visualize natural mother-infant interaction in everyday settings.
+    </p>
 
-            <p class="desc">
-              The project was developed to help extend parent-infant interaction research beyond structured laboratory paradigms into more naturalistic environments. It supports multimodal observation of facial behavior, body movement, vocal activity, affect-related estimates, and contextual logging within a unified review framework.
-            </p>
+    <p class="desc">
+      Click this card to open the full project page.
+    </p>
 
-            <p class="desc">
-              The broader goal of OyaKoSync is to support contextualized interpretation of dyadic interaction by linking rich interaction-episode recording with lower-burden monitoring of daily emotional, physiological, and activity context.
-            </p>
-
-            <div class="tags">
-              <span class="tag">Mother-infant interaction</span>
-              <span class="tag">Multimodal sensing</span>
-              <span class="tag">Behavior analysis</span>
-              <span class="tag">Affective computing</span>
-              <span class="tag">Physiological signals</span>
-              <span class="tag">iOS app</span>
-              <span class="tag">Naturalistic observation</span>
-            </div>
-
-            <div class="actions">
-              <a class="btn" href="mailto:herbuela.vonralphdane@mail.u-tokyo.ac.jp">Contact</a>
-              <a class="btn" href="publications.html">Related publications</a>
-            </div>
-
-            <p class="note">
-              Available in Japanese and English. Intended for research and observational support; not a medical device.
-            </p>
-          </article>
+    <div class="tags">
+      <span class="tag">Mother-infant interaction</span>
+      <span class="tag">Multimodal sensing</span>
+      <span class="tag">Behavior analysis</span>
+      <span class="tag">Affective computing</span>
+      <span class="tag">iOS app</span>
+    </div>
+  </article>
+</a>
         </div>
       </div>
     </section>
