@@ -3,8 +3,9 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Research | Von Ralph Dane Marquez Herbuela, PhD</title>
+  <title>Research • Von Ralph Herbuela</title>
   <meta name="description" content="Research projects by Von Ralph Dane Marquez Herbuela, including OyaKoSync and multimodal measurement of mother-infant interaction." />
+
   <style>
     :root{
       --bg: #0b1020;
@@ -22,7 +23,7 @@
 
     * { box-sizing: border-box; }
     html { scroll-behavior: smooth; }
-    body {
+    body{
       margin: 0;
       font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial, "Apple Color Emoji", "Segoe UI Emoji";
       background:
@@ -36,10 +37,9 @@
 
     a { color: inherit; text-decoration: none; }
     a.link { text-decoration: underline; text-underline-offset: 3px; }
-
     .wrap { max-width: var(--maxw); margin: 0 auto; padding: 24px; }
 
-    .topbar {
+    .topbar{
       position: sticky;
       top: 0;
       z-index: 50;
@@ -47,8 +47,7 @@
       background: rgba(11,16,32,0.55);
       border-bottom: 1px solid var(--border);
     }
-
-    .topbar-inner {
+    .topbar-inner{
       max-width: var(--maxw);
       margin: 0 auto;
       padding: 14px 24px;
@@ -58,42 +57,38 @@
       gap: 12px;
     }
 
-    .brand {
+    .brand{
       display: flex;
       align-items: center;
       gap: 12px;
       min-width: 180px;
     }
-
-    .avatar {
+    .avatar{
       width: 36px;
       height: 36px;
       border-radius: 12px;
       background: linear-gradient(135deg, rgba(56,189,248,0.9), rgba(167,139,250,0.9));
       box-shadow: 0 10px 30px rgba(56,189,248,0.15);
     }
-
-    .brand h1 {
+    .brand h1{
       font-size: 14px;
       margin: 0;
       letter-spacing: 0.2px;
     }
-
-    .brand p {
+    .brand p{
       margin: 0;
       font-size: 12px;
       color: var(--muted2);
       line-height: 1.2;
     }
 
-    .nav {
+    .nav{
       display: flex;
       gap: 10px;
       flex-wrap: wrap;
       justify-content: center;
     }
-
-    .btn {
+    .btn{
       display: inline-flex;
       align-items: center;
       gap: 10px;
@@ -108,96 +103,93 @@
       user-select: none;
       cursor: pointer;
     }
-
-    .btn:hover {
+    .btn:hover{
       transform: translateY(-1px);
       background: rgba(255,255,255,0.07);
       border-color: rgba(255,255,255,0.18);
     }
-
-    .btn.primary {
+    .btn.primary{
       background: linear-gradient(135deg, rgba(56,189,248,0.18), rgba(167,139,250,0.16));
       border-color: rgba(167,139,250,0.26);
     }
 
-    .hero {
-      padding: 36px 0 12px;
-    }
-
-    .card {
+    .card{
       background: var(--panel);
       border: 1px solid var(--border);
       border-radius: var(--radius);
       box-shadow: var(--shadow);
     }
+    .card-inner{ padding: 22px; }
 
-    .card-inner { padding: 24px; }
+    .hero{
+      padding: 22px 0 10px;
+    }
 
-    .headline {
+    .headline{
       margin: 0 0 8px;
       font-size: clamp(28px, 4vw, 42px);
       line-height: 1.15;
       letter-spacing: -0.4px;
     }
-
-    .subhead {
-      margin: 0;
+    .subhead{
+      margin: 0 0 14px;
       color: var(--muted);
       font-size: 15px;
       max-width: 72ch;
     }
 
-    .section {
+    section { scroll-margin-top: 88px; }
+    .section{
       margin-top: 18px;
-      padding: 10px 0;
+      padding: 8px 0;
     }
-
-    .section h2 {
-      font-size: 20px;
-      margin: 0 0 8px;
+    .section h2{
+      font-size: 18px;
+      margin: 0 0 10px;
       letter-spacing: 0.2px;
     }
-
-    .section p.lead {
+    .section p.lead{
       margin: 0 0 14px;
       color: var(--muted);
       font-size: 14px;
     }
 
-    .project {
+    .pillrow{
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 10px;
+    }
+
+    .project{
       background: rgba(255,255,255,0.05);
       border: 1px solid var(--border);
       border-radius: var(--radius2);
       padding: 18px;
       margin-top: 12px;
     }
-
-    .project-title {
+    .project-title{
       margin: 0 0 6px;
       font-size: 20px;
       font-weight: 800;
     }
-
-    .meta {
+    .meta{
       margin: 0 0 12px;
       color: var(--muted2);
       font-size: 13px;
     }
-
-    .desc {
+    .desc{
       margin: 0 0 14px;
       color: var(--muted);
       font-size: 14px;
     }
-
-    .tags {
+    .tags{
       margin-top: 12px;
       display: flex;
       flex-wrap: wrap;
       gap: 8px;
     }
-
-    .tag {
+    .tag{
       font-size: 12px;
       padding: 6px 10px;
       border-radius: 999px;
@@ -205,32 +197,35 @@
       background: rgba(255,255,255,0.03);
       color: var(--muted);
     }
-
-    .actions {
+    .actions{
       display: flex;
       flex-wrap: wrap;
       gap: 10px;
       margin-top: 16px;
     }
-
-    .note {
+    .note{
       margin-top: 14px;
       font-size: 13px;
       color: var(--muted2);
     }
 
-    footer {
+    footer{
       padding: 28px 0 40px;
       color: var(--muted2);
       font-size: 12px;
       text-align: center;
     }
+
+    @media (max-width: 900px){
+      .topbar-inner { gap: 10px; }
+    }
   </style>
 </head>
+
 <body>
   <header class="topbar">
     <div class="topbar-inner">
-      <a class="brand" href="index.html" aria-label="Go to homepage">
+      <a class="brand" href="index.html" aria-label="Go to home page">
         <div class="avatar" aria-hidden="true"></div>
         <div>
           <h1>Von Ralph Herbuela</h1>
@@ -241,7 +236,7 @@
       <nav class="nav" aria-label="Primary navigation">
         <a class="btn primary" href="research.html">Research</a>
         <a class="btn" href="publications.html">Publications</a>
-        <a class="btn" href="conferences.html">Conferences</a>
+        <a class="btn" href="projects.html">Projects</a>
         <a class="btn" href="index.html#news">News</a>
       </nav>
     </div>
@@ -253,7 +248,7 @@
         <div class="card-inner">
           <h1 class="headline">Research</h1>
           <p class="subhead">
-            My research focuses on physiological sensing, behavioral data analysis, and AI-driven systems for understanding cognitive, affective, and social interaction processes in real-world settings.
+            My research focuses on physiological sensing, behavioral data analysis, multimodal affective computing, and AI-driven systems for understanding cognitive, emotional, and social interaction processes in real-world settings.
           </p>
         </div>
       </div>
@@ -262,21 +257,42 @@
     <section class="section">
       <div class="card">
         <div class="card-inner">
-          <h2>Featured Project</h2>
+          <h2>Research Topics</h2>
           <p class="lead">
-            Selected work on multimodal measurement, parent-infant interaction, and naturalistic behavioral analysis.
+            Select a topic below to jump to a featured project.
           </p>
 
-          <article class="project">
+          <div class="pillrow" style="margin-top:14px;">
+            <a class="btn primary" href="#oyakosync">OyaKoSync</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="featured-projects">
+      <div class="card">
+        <div class="card-inner">
+          <h2>Featured Project</h2>
+          <p class="lead">
+            Selected work on multimodal measurement, mother-infant interaction, and naturalistic behavioral analysis.
+          </p>
+
+          <article class="project" id="oyakosync">
             <h3 class="project-title">OyaKoSync</h3>
-            <p class="meta">Multimodal app for contextualized measurement of mother-infant interaction</p>
+            <p class="meta">
+              A lightweight multimodal framework for contextualized measurement of mother-infant interaction
+            </p>
 
             <p class="desc">
-              OyaKoSync is a lightweight multimodal measurement app designed to record and visualize natural parent-infant interaction in everyday settings. Using smartphone-based synchronized video and audio capture, together with physiology-related measures and emotion/context logs, the system supports temporally aligned review of interaction dynamics across multiple modalities.
+              OyaKoSync is a lightweight multimodal measurement system designed to record and visualize natural mother-infant interaction in everyday settings. Using smartphone-based synchronized front and back camera capture, audio recording, physiology-related measures, and emotion/context logs, the system supports temporally aligned review of interaction dynamics across multiple modalities.
             </p>
 
             <p class="desc">
               The project was developed to help extend parent-infant interaction research beyond structured laboratory paradigms into more naturalistic environments. It supports multimodal observation of facial behavior, body movement, vocal activity, affect-related estimates, and contextual logging within a unified review framework.
+            </p>
+
+            <p class="desc">
+              The broader goal of OyaKoSync is to support contextualized interpretation of dyadic interaction by linking rich interaction-episode recording with lower-burden monitoring of daily emotional, physiological, and activity context.
             </p>
 
             <div class="tags">
@@ -286,6 +302,7 @@
               <span class="tag">Affective computing</span>
               <span class="tag">Physiological signals</span>
               <span class="tag">iOS app</span>
+              <span class="tag">Naturalistic observation</span>
             </div>
 
             <div class="actions">
@@ -305,6 +322,7 @@
       <div>
         © <span id="year"></span> Von Ralph Herbuela •
         <a class="link" href="mailto:herbuela.vonralphdane@mail.u-tokyo.ac.jp">herbuela.vonralphdane@mail.u-tokyo.ac.jp</a>
+         • <a class="link" href="https://developmental-robotics.jp/en/members/von_ralph_dane_marquez_herbuela/" target="_blank" rel="noopener">Lab profile</a>
       </div>
     </footer>
   </main>
