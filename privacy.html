@@ -121,6 +121,7 @@
             <li>Audio recordings</li>
             <li>Physiology-related data, such as heart-rate-related information and other related signals when available</li>
             <li>User-entered logs, such as emotion, activity, or contextual notes</li>
+            <li>Registration information, including the user's email address</li>
             <li>Basic technical information required for app functionality</li>
           </ul>
 
@@ -128,6 +129,8 @@
           <ul>
             <li>To enable synchronized multimodal recording and review within the app</li>
             <li>To support research and observational use</li>
+            <li>To register and manage user access</li>
+            <li>To process user-selected sharing with the researcher or app owner</li>
             <li>To improve app functionality, stability, and usability</li>
             <li>To respond to support inquiries</li>
           </ul>
@@ -144,6 +147,19 @@
             Users should review in-app explanations and any study-specific documentation for details
             regarding data storage, retention, transfer, and access.
           </p>
+          <p>
+            In the current implementation of OyaKoSync, recorded videos, emotion logs, and related
+            interaction data are stored locally within the app on the user's device by default.
+          </p>
+          <p>
+            For account registration purposes, the user's email address is stored using Firebase
+            Authentication or related Firebase services.
+          </p>
+          <p>
+            OyaKoSync also includes user-controlled options that allow the user to choose whether
+            certain information, such as videos, emotion logs, and related records, will be shared
+            with the researcher or app owner through Firebase.
+          </p>
 
           <h2>5. Data Sharing</h2>
           <p>
@@ -151,6 +167,15 @@
             applicable study, institutional process, or user workflow. If data are collected as part
             of a research study, handling and sharing will follow the approved study procedures and
             participant information provided in that context.
+          </p>
+          <p>
+            If the user chooses to share information through the options provided in the app,
+            selected data may be uploaded to Firebase and accessed by the researcher or app owner
+            for research, review, or support purposes.
+          </p>
+          <p>
+            Data that the user does not choose to share may remain stored locally within the app
+            on the user's device, depending on app configuration and usage.
           </p>
 
           <h2>6. Children’s Data</h2>
@@ -165,11 +190,20 @@
             Reasonable efforts are taken to support appropriate handling of information. However,
             no method of electronic storage or transmission can be guaranteed to be completely secure.
           </p>
+          <p>
+            Account-related access is protected through password-based authentication. Although
+            reasonable efforts are taken to secure account-related data and shared information,
+            users should understand that no system can guarantee absolute security.
+          </p>
 
           <h2>8. Your Choices</h2>
           <p>
             Users may choose whether to use the app and what information to enter, record, or retain,
             subject to the requirements of their use setting or research protocol.
+          </p>
+          <p>
+            Where the app provides sharing options, users may also choose whether specific data,
+            such as videos and emotion logs, will be shared with the researcher or app owner.
           </p>
 
           <h2>9. Changes to This Policy</h2>
@@ -201,6 +235,7 @@
             <li>音声記録</li>
             <li>心拍関連情報などの生理関連データ、および利用可能な関連信号</li>
             <li>感情、活動、文脈メモなどのユーザー入力ログ</li>
+            <li>ユーザー登録情報（メールアドレスを含む）</li>
             <li>アプリ機能の提供に必要な基本的技術情報</li>
           </ul>
 
@@ -208,6 +243,8 @@
           <ul>
             <li>アプリ内での同期的なマルチモーダル記録および振り返り機能の提供</li>
             <li>研究および観察支援目的での利用</li>
+            <li>利用登録およびアクセス管理</li>
+            <li>利用者が選択した研究者または運営者への共有処理</li>
             <li>アプリの機能性、安定性、操作性の改善</li>
             <li>お問い合わせへの対応</li>
           </ul>
@@ -223,12 +260,33 @@
             データの保存方法や取扱いは、アプリの設定や研究利用の条件によって異なる場合があります。
             保存期間、移転、アクセス権などの詳細については、アプリ内説明や研究ごとの案内をご確認ください。
           </p>
+          <p>
+            現在のOyaKoSyncの実装では、記録された動画、感情ログ、および関連する相互作用データは、
+            原則として利用者の端末内のアプリにローカル保存されます。
+          </p>
+          <p>
+            アカウント登録のため、利用者のメールアドレスは Firebase Authentication
+            または関連する Firebase サービスを用いて保存されます。
+          </p>
+          <p>
+            また、OyaKoSyncには、動画、感情ログ、その他の関連記録を研究者またはアプリ運営者に
+            共有するかどうかを、利用者自身が選択できる機能があります。
+          </p>
 
           <h2>5. データ共有</h2>
           <p>
             本ページでは、適用される研究計画、所属機関の手続き、または利用ワークフローに記載された場合を除き、
             第三者提供を前提とするものではありません。研究の一環として収集されるデータについては、
             当該研究で定められた承認済みの手順および説明文書に従って取り扱われます。
+          </p>
+          <p>
+            利用者がアプリ内の共有機能を用いて共有を選択した場合、選択されたデータは Firebase に
+            アップロードされ、研究、確認、またはサポート目的で研究者またはアプリ運営者が
+            アクセスできる場合があります。
+          </p>
+          <p>
+            利用者が共有を選択しないデータは、アプリの設定および利用状況に応じて、
+            利用者の端末内のアプリに保存される場合があります。
           </p>
 
           <h2>6. 子どもに関するデータ</h2>
@@ -242,11 +300,20 @@
             情報の適切な取扱いを支援するため合理的な配慮を行いますが、
             電子的保存または送信の安全性を完全に保証することはできません。
           </p>
+          <p>
+            アカウント関連のアクセスには、パスワード認証が用いられます。アカウント関連情報および
+            共有データの保護に合理的な配慮を行いますが、いかなるシステムも完全な安全性を
+            保証できるものではありません。
+          </p>
 
           <h2>8. 利用者の選択</h2>
           <p>
             利用者は、利用環境または研究プロトコル上の要件に従いつつ、
             アプリの利用や入力・記録・保持する情報を選択できます。
+          </p>
+          <p>
+            また、アプリが共有機能を提供する場合、動画や感情ログなどの特定のデータを
+            研究者またはアプリ運営者と共有するかどうかを選択できます。
           </p>
 
           <h2>9. 本ポリシーの変更</h2>
